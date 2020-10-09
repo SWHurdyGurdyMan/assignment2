@@ -1,4 +1,4 @@
-package com.meritamerica.assignment1;
+package com.meritamerica.assignment2;
 
 public class MeritBank {
 	static void addAccountHolder(AccountHolder accountHolder) {
@@ -20,7 +20,7 @@ public class MeritBank {
 		
 	}
 	static void setCDOfferings(CDOffering[] offerings) {
-		
+		this.offerings = offerings;
 	}
 	static long getNextAccountNumber() {
 		return nextAccountNumber;

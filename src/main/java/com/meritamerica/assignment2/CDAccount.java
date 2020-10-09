@@ -1,4 +1,4 @@
-package com.meritamerica.assignment1;
+package com.meritamerica.assignment2;
 import java.util.*;
 public class CDAccount {
 	CDOffering offering;

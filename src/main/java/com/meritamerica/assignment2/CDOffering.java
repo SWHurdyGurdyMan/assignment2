@@ -1,4 +1,4 @@
-package com.meritamerica.assignment1;
+package com.meritamerica.assignment2;
 
 public class CDOffering {
 	private int term;
