@@ -1,19 +1,26 @@
 package com.meritamerica.assignment1;
 
-import java.text.DecimalFormat;
-
-public class SavingsAccount {
-	 
+public class BankAccount {
 	private double balance;
 	private double interestRate;
 	private double FV;
 	private int years;
+	private long accountNumber;
 
-	//sets initial balance, interest rate, and years in which interest is accrued
-	public SavingsAccount (double savingsAccountOpeningBalance, int years) {
-		this.balance = savingsAccountOpeningBalance;
-		this.interestRate = 1.0/100;
-		this.years = 3;
+	//sets initial balance, interest rate
+	public BankAccount (double balance, double interestRate) {
+		this.balance = balance;
+		this.interestRate = interestRate;
+	}
+	
+	public BankAccount (long accountNumber, double balance, double interestRate) {
+		this.accountNumber = accountNumber;
+		this.balance = balance;
+		this.interestRate = interestRate;
+	}
+	
+	public long getAccountNumber() {
+		return this.accountNumber;
 	}
 	
 	public double getBalance() {
@@ -27,7 +34,7 @@ public class SavingsAccount {
 	public boolean withdraw(double amount) {
 		if(amount > 0 && amount <= balance) {
 			balance -= amount;
-			System.out.println("\nWithdrawn: $" + amount + "\nSavings balance: $" + balance);
+			System.out.println("\nWithdrawn: $" + amount + "\nAccount balance: $" + balance);
 			return true;
 		} else {
 			System.out.println("\nYou cannot withdraw $" + amount + " which is more than your balance of $" + balance);
@@ -38,7 +45,7 @@ public class SavingsAccount {
 	public boolean deposit(double amount) {
 		if(amount > 0) {
 			balance += amount;
-			System.out.println("\nDeposited: $" + amount + "\nSavings balance: $" + balance);
+			System.out.println("\nDeposited: $" + amount + "\nAccount balance: $" + balance);
 			return true;
 		} else {
 			System.out.println("\nYou cannot deposit a negative amount of " + amount + " dollars.");
@@ -53,13 +60,5 @@ public class SavingsAccount {
 		value = balance * powered;
 		FV = value;
 		return FV;
-	}
-	//turns account balance, interest, and FV to formatted String
-	public String toString() {
-		double FV = futureValue(years);
-		DecimalFormat df = new DecimalFormat("0.##");
-		return "\nSavings Account Balance: " + df.format(balance) + 
-				"\n Savings Account Interest Rate: " + interestRate +
-				"\n Savings Account Balance in " + years + " years: " + df.format(FV);
 	}
 }
