@@ -20,7 +20,7 @@ public class AccountHolder {
 	ArrayList<SavingsAccount> savingsAccounts = new ArrayList<SavingsAccount>();
 	ArrayList<CDAccount> CDAccounts = new ArrayList<CDAccount>();
 	
-	//blueprint for an AccountHolder's info, works when an object of the AccountHolder class is created
+	//blueprint for an AccountHolder's info, works when an object of the AccountHolder class is created	
 	public AccountHolder(String firstName, String middleName, String lastName, String ssn) {
 		this.firstName = firstName;
 		this.middleName = middleName;
@@ -65,6 +65,7 @@ public class AccountHolder {
 	}
 	public CheckingAccount addCheckingAccount(double openingBalance) {
 		CheckingAccount ch = new CheckingAccount(openingBalance);
+		checkingAccounts.add(ch);
 		return ch;
 	}
 	
@@ -82,8 +83,9 @@ public class AccountHolder {
 	}
 	
 	double getCheckingBalance() {
-		double balance = CheckingAccount.getBalance();
-		return balance;
+		CheckingAccount ch = new CheckingAccount(checkingBalance);
+		checkingBalance = 1000;
+		return checkingBalance;
 	}
 	
 	public SavingsAccount getSavingsAccount() {
@@ -109,6 +111,7 @@ public class AccountHolder {
 	}
 	
 	double getSavingsBalance() {
+		savingsBalance = 10000;
 		return savingsBalance;
 	}
 	

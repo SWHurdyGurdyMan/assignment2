@@ -9,14 +9,14 @@ public class MeritBank {
 	static ArrayList<CDOffering> cdOfferings = new ArrayList<CDOffering>();
 	
 	static void addAccountHolder(AccountHolder accountHolder) {
-		
+		accountHolders.add(accountHolder);
 	}
 	static AccountHolder[] getAccountHolders() {
 		AccountHolder[] AccountHolder = accountHolders.toArray(new AccountHolder[0]);
 		return AccountHolder;
 	}
 	static CDOffering[] getCDOfferings() {
-		CDOffering[] CDOfferings = cdOfferings.toArray(new CDOffering[0]);
+		CDOffering[] CDOfferings = cdOfferings.toArray(new CDOffering[cdOfferings.size()]);
 		return CDOfferings;
 	}
 	static CDOffering getBestCDOffering(double depositAmount) {
@@ -26,7 +26,8 @@ public class MeritBank {
 		return CDOffering;
 	}
 	static void clearCDOfferings() {
-		
+		CDOffering = null;
+		cdOfferings.clear();
 	}
 	static void setCDOfferings(CDOffering[] offerings) {
 		offerings = offerings;
