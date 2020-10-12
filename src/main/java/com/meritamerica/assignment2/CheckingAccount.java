@@ -2,19 +2,17 @@ package com.meritamerica.assignment2;
 
 import java.text.DecimalFormat;
 
-public class CheckingAccount {
+public class CheckingAccount extends BankAccount{
 	
 	//establish interest, FV=Future Value, years, and balance
 	private double balance;
 	private double interestRate;
 	private double FV;
 	private int years;
-
 	//sets initial balance, interest rate, and years in which interest is accrued
-	public CheckingAccount (double checkingAccountOpeningBalance, int years) {
-		this.balance = checkingAccountOpeningBalance;
-		this.interestRate =  0.0001;
-		this.years = 3;
+	public CheckingAccount(double balance){
+		BankAccount newCheckingAccount = new BankAccount();
+		this.balance = balance;
 	}
 	
 	public double getBalance() {

@@ -2,18 +2,17 @@ package com.meritamerica.assignment2;
 
 import java.text.DecimalFormat;
 
-public class SavingsAccount {
+public class SavingsAccount extends BankAccount{
 	 
 	private double balance;
 	private double interestRate;
 	private double FV;
 	private int years;
 
-	//sets initial balance, interest rate, and years in which interest is accrued
-	public SavingsAccount (double savingsAccountOpeningBalance, int years) {
-		this.balance = savingsAccountOpeningBalance;
-		this.interestRate = 1.0/100;
-		this.years = 3;
+	//sets initial balance, creates savingsAccounts
+	public SavingsAccount(double balance){
+		BankAccount newSavingsAccount = new BankAccount();
+		this.balance = balance;
 	}
 	
 	public double getBalance() {

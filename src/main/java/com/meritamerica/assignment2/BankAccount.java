@@ -19,6 +19,9 @@ public class BankAccount {
 		this.interestRate = interestRate;
 	}
 	
+    public BankAccount(){
+    }
+	
 	public long getAccountNumber() {
 		return this.accountNumber;
 	}
